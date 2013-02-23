@@ -1,0 +1,16 @@
+@autor: philipp gressly freimann
+
+omni ist ein preprocessor für java.
+    
+generiert werden java-Klassen aus einem odere mehreren omni-Quelltexten.
+
+V0:
+  Omni existiert erst in Beispielen und Konzeptentwürfen.
+  Eine Umsetzung wurde bis 2013 noch nicht in Angriff genommen.
+
+Ein typischer Omni-Quelltext liegt in "main.omni"
+
+
+Probleme von Java (und ähnlichen Sprachen) sind auf 
+http://www.santis-training.ch/training/java/pitfalls.php
+erklärt.

@@ -1,0 +1,190 @@
+﻿// @date: 19. Jan. 2012
+// @autor: phi
+//
+// erstes Testprogramm in "OMNI"
+
+#package ly.gress.omni.test
+
+#import  util.inc
+#import  util.date
+#external import java.util.ArrayList;
+
+///////////////////////////////////////////////////
+
+// Keine Strichpunkte am Ende einer Anweisung:
+
+al: ArrayList<String>
+
+// Zuweisung mittels Zuweisungspfeil
+al ← new ArrayList<String>
+
+
+al.add("Hallo")
+al.add("Welt")
+
+// Schlüsselwörter "for" und "in"
+for w in al {
+  print "Ausgabe ", w
+}
+
+// 'print' entspricht "System.out.println"
+print "Hallo Welt"
+
+// Automatische Typenerkennung vor dem Compile:
+name ← "Philipp" // name wird automatisch "string"
+
+// String concat mit "," (kein '&', kein '+' ...)
+print "Mein Name ist ", name
+
+// Typen können explizit vergeben werden.
+x: int
+y: real
+
+x ← 8
+// Wissenschafltiche Notation
+y ← -7.3e2
+
+
+print "Summe x + y = ", (x + y)
+
+// '..'-Opreator definiert eine Sequenz
+for i in 1 .. 99 { // i wird automatisch "int"
+  print i, ". Zahl"
+  // Mathematische Symbole und Zuweisung aus Unicode
+  if(i ≥ 80 AND i ≠ 90 OR i = 40) { 
+    print "Achtung groß oder speziell..."
+  }
+} 
+
+ok: boolean
+
+ok ← false OR (x > 4)
+
+if(ok) {
+  print "Alles in Butter"
+}
+
+
+i ← "Hallo" // i wurde nur lokal definiert, somit ist diseses i "frei".
+
+// kein "break"!
+switch(i) {
+  1: print "sehr schwach"
+  2, 3, 4:
+     print "na ja" 
+  5: print "sehr gut"
+  "Hallo": print "das musste ja kommen"
+  -: print "nicht definerter Wert"
+}
+
+// return mit einfachem Zuweisungszeichen bei letzter Anweisung.
+func sin(x: real) { // Annaeherung
+
+  // Zeilenumbruch für mehrzeilige Anweisungen 
+  ← x - x*x*x/6 + x*x*x*x*x/120 - \ 
+    x*x*x*x*x*x*x/(120*7*8)
+}
+
+
+// keyword "proc" für subroutinene ohne Return.
+proc tenTimes() {
+  for i in 1 .. 10 {
+    print "Hello World"
+  }
+}
+
+// keyword 'func' für funktionen mit return
+// Datentyp "func(x)"
+func intregralBis10(f: func(x)) {
+  sum ← 0
+  for i in 1..10 {
+    sum = sum + f(i)
+  }
+  ← sum
+}
+
+
+// call lambda
+t = tenTimesDo(sin())     
+
+
+///////////////////////////////////
+//         Objekte
+//
+
+
+// Test mit Kühen
+k      ← new Kuh // k wird automatisch Typ "class Kuh"
+k.name ← "vera"
+k.jahr ← 1988
+k.friss(2.5)
+k      ← new Kuh(name ← "Anja", jahr ← 1955)
+k.friss(3.5)
+k.addGewicht(2.5)
+
+k ← 7 // ERROR: k hat typ "Kuh"
+
+
+class Kuh {
+  attr {
+   +name: string
+   +jahr: int
+   -gewicht: real
+  }
+
+  proc init() {} // empty constructor 
+  
+  proc check() {
+    if (jahr < 1900) {
+      throw exception("Jahr zu klein")
+    }
+  }	
+  
+  proc addGewicht(kg: real) {
+    inc(gewicht, kg) 
+  }  
+	
+  proc friss(kg: real) {
+    print name, " frisst ", kg, " kg."
+  }  
+} // end Kuh
+
+
+k = new Kalb(name ← "Vera", monat ← 3)
+print k // "string()" wird aufgerufen
+
+class Kalb is Kuh {
+  attr {
+   +monat: int
+  }
+  
+  proc init() {
+     jahr ← date.year
+  }
+  
+  func string() { // entspricht in Java ToString
+    ← "Kalb ", name, " ist geboren im monat ", monat
+  }
+}
+
+enum Wochentag {
+ MONTAG, DIENSTAG, MITTWOCH, DONNERSTAG, FREITAG, SAMSTAG, SONNTAG
+}
+
+for wt in Wochentag.elements() {
+  print "noch ein Wochentag: ", wt
+}
+
+// analog
+for wt in 1 .. Wochentag.size() {
+  print "noch ein Wochentag: ", Wochentag.element(wt)
+}
+
+
+feld: real[] {3.8, 4.7e3, -6.9, 5.8} // Index 1..4
+for x in feld { // x hat Datentyp "real"
+  print (x + 10), " ist einfach groß"
+}
+feld[4] ← 4.8
+
+
