@@ -55,6 +55,9 @@ for i in 1 .. 99 { // i wird automatisch "int"
     print "Achtung groß oder speziell..."
   }
 } 
+// Bem.: Keine Sondersymbole für AND, OR, XOR und NOT.
+
+
 
 ok: boolean
 
@@ -124,7 +127,7 @@ k.addGewicht(2.5)
 
 k ← 7 // ERROR: k hat typ "Kuh"
 
-
+// Analog Unicode: +: Public; -: Private
 class Kuh {
   attr {
    +name: string

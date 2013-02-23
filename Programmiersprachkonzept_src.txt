@@ -1,6 +1,8 @@
 Datei: Xyz.src
 **************
 
+(erster Entwurf) für weiterführende Beispiele siehe Datei "main.omni".
+
 x: int
 
 x ← 4
