@@ -59,10 +59,18 @@ g    ← 4.0
 print "Mein Name ist ", name
 
 // Typen können explizit vergeben (deklariert) werden.
+// Folgende existieren: real, boolean und diverse int:
+// sint8 : signed   int  8 bit
+// uint8 : unsigend int  8 bit
+// sint16: signed   int 16 bit
+// ...
+// uint64: unsignen int 64 bit
+// abkürzung, da häufig: int = sint32
+// real ist 64 bit. sonst real32, real64, real128
 x: int
 y: real
 
-x ← 8
+x ←  8
 // Wissenschafltiche Notation
 y ← -7.3e2
 
@@ -77,41 +85,50 @@ for i in 1 .. 99 { // i wird automatisch "int"
     print "Achtung groß oder speziell..."
   }
 } 
+
+
 // Bem.: Keine Sondersymbole für AND, OR, XOR und NOT.
-
-
 
 ok: boolean
 
-ok ← false OR (x > 4)
+ok ← (false OR true) OR (x > 4)
 
 if(ok) {
   print "Alles in Butter"
 }
 
 
-i ← "Hallo" // i wurde nur lokal definiert, somit ist diseses i "frei".
+i ← "Hallo" // falls i nur lokal lokal definiert wurde, somit ist diseses i "frei".
+            // hat i schon einen Datentypen, so wird 
+            // a) einfach zugewiesen, falls die Typen gleich
+            // b) Fehlermeldung, bei inkompatiblen typen.
 
 // kein "break"!
+// "-" == default
 switch(i) {
   1: print "sehr schwach"
   2, 3, 4:
      print "na ja" 
-  5: print "sehr gut"
+  5: print "sehr" →    // = falls through
+  6: print "gut"
   "Hallo": print "das musste ja kommen"
   -: print "nicht definerter Wert"
 }
 
 // return mit einfachem Zuweisungszeichen bei letzter Anweisung.
+// Somit ist eine funktionale Denkweise einfacher
 func sin(x: real) { // Annaeherung
 
-  // Zeilenumbruch für mehrzeilige Anweisungen 
+  // Nochmals: Zeilenumbruch für mehrzeilige Anweisungen 
   ← x - x*x*x/6 + x*x*x*x*x/120 - \ 
     x*x*x*x*x*x*x/(120*7*8)
 }
 
 
 // keyword "proc" für subroutinene ohne Return.
+// Damit kann beim Aufruf eine Fehlermeldung generiert werden, wenn
+// a) eine proc als Ausdruck aufgerufen wird oder
+// b) eine func als Proc aufgerufen wird (PL/1 läßt grüßen)
 proc tenTimes() {
   for i in 1 .. 10 {
     print "Hello World"
