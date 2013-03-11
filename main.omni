@@ -18,25 +18,47 @@ al: ArrayList<String>
 // Zuweisung mittels Zuweisungspfeil
 al ← new ArrayList<String>
 
-
+// Objektorientierte Aufrufe:
 al.add("Hallo")
-al.add("Welt")
+
+// Anweisungen mit mehr als einer Zeile aufsplitten:
+// "\" unmittelbar vor Zeilenende
+al.add\
+ ("Welt")
+
 
 // Schlüsselwörter "for" und "in"
 for w in al {
   print "Ausgabe ", w
 }
 
+// Wichtige Iterationscollections schon vorgegeben:
+for i in sequence(1, 100) {
+ ...
+}
+// ord(100) == sequence(1, 100)
+for i in ord(100) {
+ ...
+}
+
 // 'print' entspricht "System.out.println"
 print "Hallo Welt"
 
+// print ohne CR/LF mittels speziellem Befehl (print string):
+print_s "Hallo "
+print "Welt"
+
+
 // Automatische Typenerkennung vor dem Compile:
 name ← "Philipp" // name wird automatisch "string"
+i    ← 4
+f    ← 3.9
+g    ← 4.0
 
 // String concat mit "," (kein '&', kein '+' ...)
 print "Mein Name ist ", name
 
-// Typen können explizit vergeben werden.
+// Typen können explizit vergeben (deklariert) werden.
 x: int
 y: real
 
