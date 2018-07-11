@@ -1,0 +1,39 @@
+// Author: phi@gress.ly
+// Date: 2017 - 05 - 19
+
+//Datei: Xyz.src
+//**************
+
+x: Sint32
+
+/* Kommentare können auch verschachtelt sein /* so wie dieser. */ */
+
+/*
+Kommentierte kommentare
+// einzeilige Kommentare, wie in Java ...
+*/
+
+
+// Datentypen gibt es
+// Sint32 : Integer, ganze Zahl 32 Bit
+// Real64 : float 64 Bit (double)
+// String : Java-Stirng // Java Klasse, daher groß
+// Boolean: true/false
+// Char   == sInt32
+
+x ← x+1 // kann mit ++ abgekürtzt werden
+x++     // ist jedoch /*ausschließlich*/ eine Anweisung und kein Ausdruck!
+
+y: Sint32
+
+y ← x++ // ERROR: ist nicht möglich!!
+
+/*
+  nur ein mehrzeiliger Kommentar
+	x := 4; /* immer noch */
+	y := 6;
+*/
+
+for(x ← 4; x < 22; x++)
+	print("Hallo" & x)
+

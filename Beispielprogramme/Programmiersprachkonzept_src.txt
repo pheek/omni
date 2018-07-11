@@ -1,0 +1,74 @@
+Datei: Xyz.src
+**************
+
+// (erster Entwurf) für weiterführende Beispiele siehe Datei "main.omni".
+
+
+x: sInt32
+
+x ← 4
+print("Hallo Welt")
+x ← doIt()
+doIt()                ---> Fehlermeldung (ist ein Fct, keine Procedur)
+doIt2(4, "Gugus")
+print ("Summe bis 5: ", sumBis(5))
+
+double(x : sInt32) : sInt32      // Declare function returning double
+  ← 2 * x
+
+print("Das doppelte von 7 ist" , double(7))
+
+doIt() : sInt32                  // Function: Returning sInt32
+  sInt32 x ← 4
+   ←  x + 2                      // Return value
+
+doIt2(x: sInt32, z: String) :    // procedure returning nothing
+  print "Hallo", x, " ", z 
+
+sumBis(max: sInt32) : sInt32
+  sInt32 sum ← 0
+  for uInt64 i in 1 .. max
+    sum ← sum + i
+  ← sum      
+
+//////////////////////////////////////////////////////////////
+
+
++class Testklasse
+
+  // alles, was oben an Deklaritionen (variable +
+  //  Funktionsdefinitionen) vorhanden war, wird hierher kopiert
+
+  +main(String[] a) : // produces "public static void main(String args[])"
+	  // alles, was oben an "statements" definiert ist, findet hier statt.
+    new Testklasse().top()
+  
+  sInt32 x   // Error: x wurde bereits als Globale Variable deklariert!
+
+  top() :
+    x ← 4
+    printnnl("Hallo Welt") // print using "no new line"
+    x := doIt()
+    /// Fehlermeldung kann nicht kompiliert werden
+    doIt2(4, "Gugus")
+    System.out.println("Summe bis 5: " + sumBis(5));
+
+
+  doIt() : sInt32     // Error: doIt wurde bereits deklariert!
+    sInt x := 4
+    ← x + 2
+ 
+
+  doIt2(int x, String z) ;
+    System.out.println("Hallo" + x + " " + z);
+ 
+
+  sumBis(int max) : sInt32
+    sInt32 sum := 0
+    for(sInt32 i := 1; i <= max; inc(i)) 
+      sum ← sum + i             (analog   inc(sum, i)) für den Var-Parameter sum
+   
+    return sum
+
+// End class Testklasse
+

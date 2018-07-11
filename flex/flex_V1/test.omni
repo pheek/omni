@@ -1,0 +1,39 @@
+package omni.test;
+
+import omni.io;
+import omni.file;
+
+/* @author phi */
+
+Sint16 verdopple(Sint8 zahl) {
+  return 2 * zahl;
+}
+
+Sint32 x   ;
+x      ←  4;
+for(Uint8 i ← 0; i ≤ 4; inc(i)) {
+  x ←  x * i;
+}
+Omni.println(x); 
+
+Test t = new Test();
+t.gaga(4);
+
+Uint32 result = t.verdopple(4);
+Omni.printl(result);
+
+/* Casting */
+result = (Sint16) verdopple(result);
+Omni.println("als S int 16: ", result);
+
+void ← verdopple(2 * 8); // Vernichte das Resultat explizit!
+
+class Test {
+  proc gaga(Uint32 was) {
+    Omni.println("Gaga", was);
+  }
+
+  Uint32 verdopple(Uint16 z) {
+    return z * 2;
+  }
+}
