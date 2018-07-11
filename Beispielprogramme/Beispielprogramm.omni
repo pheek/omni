@@ -135,7 +135,7 @@ al ←  new ArrayList<String>
 print("Hallo Welt")
 
 al.add("Hallo")
-al.add("Welt")
+al.add("Welt" )
 
 // Schlüsselwörter "for" und "in"
 for w in 5 .. 10 {
@@ -148,13 +148,13 @@ for w in al {
 // 'print' entspricht "System.out.println"
 print ("Hallo Welt")
 
-// Automatische Typenerkennung vor dem Compile:
+// Automatische Typenerkennung vor dem Compile (für boolean, string, char):
 name ← "Philipp" // name wird automatisch "string"
 
 // String concat mit "," (kein '&', kein '+' ...)
 print ("Mein Name ist ", name)
 
-// Typen können explizit vergeben werden.
+// Typen können explizit vergeben werden (müssen auch für Zahlen).
 x: sInt32
 y: real64
 
