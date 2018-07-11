@@ -1,0 +1,52 @@
+//Statements (Anweisungen)
+//************************
+
+//Deklaration
+//------
+//<Variablenname> : <Datentyp>
+// Beispiel
+jahrgang   : sInt32
+geschlecht : char // m/w
+
+
+// Zuweisung
+//-------
+//<Variablenname> := <Ausdruck>
+// bzw.
+//<Variablenname> ← <Ausdruck>
+// Beispiel
+jahrgang := 1968
+geschlecht ← 'v' + 1 // = 'w'
+
+
+// Prozeduraufruf
+// ------
+// [call] <procedur>
+// Bsp
+wait(20_000)
+print("Hallo")
+
+// RETURN
+// -----
+// Das RETURN ist am Ende einer Subroutine implizit
+// Innerhalb von Subroutinen (if ... [then] RETURN) muss es jedoch
+// in "void" Funktionen angegeben werden.
+// Bessere Ideen?
+
+func sin(x: sReal64): sReal64
+	sin: sReal64
+	sin ← x - x*x*x/6 + x*x*x*x*x/120
+	← sin // RETURN implizit
+
+proc wait(millis: sInt32)
+	if(millis ≤ 0)
+		RETURN
+	System.wait(millis/1_000)
+	// hier folgt ein implizites RETURN
+
+
+// Objekterzeugung
+// ---------------
+// Bsp.
+new GameView()
+
