@@ -1,0 +1,36 @@
+// Als Literale sind zu den Datentypen die folgenden vorgesehen:
+
+// sInt32 : Integer, ganze Zahl 32 Bit
+id: sInt32
+id :=             4
+id :=            -4
+id := 2_000_000_000
+id :=             0
+
+
+// real64 : float 64 Bit (double)
+temperatur: real64
+temperatur ← 4.0
+temperatur ← -4.0
+temperatur ← -2.683
+temperatur ← 3.634E-2 // Exponentialschreibseise (10er Potenz)
+
+// String : Java-String // Java Klasse, daher groß geschrieben
+name: String
+
+// Strings immer in doppelten Hochkommata
+name ← "Hansli Meier"
+// Sonderzeichen 1:1 wie in Java: \n newline...
+// Unicode jedoch nicht nötig, da nur Unicode-Editor verwendet werden kann/soll.
+name ← "Hansli alias \"Hänsu\"\n"
+
+// boolean: true/false
+wahr: boolean
+wahr := false
+
+// char   (== sInt32)
+geschlecht: char
+geschlecht ←  'm'
+geschlecht ←  44 // unicode char 44
+geschlecht ←  (char) id
+

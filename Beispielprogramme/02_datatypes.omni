@@ -1,0 +1,15 @@
+// Datentypen gibt es
+// sInt32 : Integer, ganze Zahl 32 Bit, s = sigend
+// real64 : float 64 Bit (double)
+// String : Java-String // Java Klasse, daher groß
+// boolean: Literale: true/false
+// char   == sInt32
+
+
+// Deklarationen wie in Pascal: Name Doppelpunkt Wert
+x: sInt32
+
+x := 2_000_000_000 // max 2 Milliarden und ein paar Zerquetschte
+
+y: real64
+y := 33e-2 // Wissenschaftliche Notation

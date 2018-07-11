@@ -2,6 +2,7 @@
 //**************
 
 /* Kommentare können auch Verschachtelt sein /* so wie dieser. */ */
+// (erster Entwurf) für weiterführende Beispiele siehe Datei "main.omni".
 
 // einzeilige Kommentare, wie in Java ...
 
@@ -49,7 +50,8 @@ x ← doIt()
 doIt()                ---> Fehlermeldung (ist ein Fct, keine Procedur)
 doIt2(4, "Gugus")
 print ("Summe bis 5: " & sumBis(5))
-
+// oder so?
+print ("Summe bis 5: ", sumBis(5))
 verdoppeln(x : sInt32) : sInt32      // Declare function returning double
   ← 2 * x
 
@@ -94,7 +96,7 @@ sumBis(max: sInt32) : sInt32
 
   doIt() : sInt32     // Error: doIt wurde bereits deklariert!
     sInt x := 4
-    x + 2
+    ← x + 2
  
 
   doIt2(int x, String z) ;

@@ -1,0 +1,8 @@
+//Datei: Xyz.src
+//**************
+
+/* Kommentare können auch Verschachtelt sein /* so wie dieser. */ */
+// (erster Entwurf).
+
+// einzeilige Kommentare, wie in Java ...
+sInt32 x // Endzeilenkommentare wie in C++, Java, ...
