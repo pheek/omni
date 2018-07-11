@@ -103,16 +103,25 @@ i ← "Hallo" // falls i nur lokal lokal definiert wurde, somit ist diseses i "f
             // a) einfach zugewiesen, falls die Typen gleich
             // b) Fehlermeldung, bei inkompatiblen typen.
 
+// Switch am besten ganz verbannen oder durch den PL/I SELECT/WHEN ersetzen
 // kein "break"!
 // "-" == default
-switch(i) {
-  1: print "sehr schwach"
-  2, 3, 4:
-     print "na ja" 
-  5: print "sehr" →    // = falls through
-  6: print "gut"
+select(i) {
+  1      : print "sehr schwach"
+  2, 3, 4: print "na ja" 
+  5      : print "sehr" 
+  5, 6   : print "gut"
   "Hallo": print "das musste ja kommen"
   -: print "nicht definerter Wert"
+}
+bzw.
+select() {
+  when x = 1                  : print "sehr schwach"
+  when x = 2 OR x = 3 OR x = 4: print "na ja"
+  when x = 5                  : print "sehr "
+  when x = 6                  : print "gut"
+  when x = "Hallo"            : print "das muste ja kommen"
+  -                           : "nicht definierter Wert"
 }
 
 // return mit einfachem Zuweisungszeichen bei letzter Anweisung.
