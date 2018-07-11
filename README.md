@@ -20,5 +20,5 @@ Ein typischer Omni-Quelltext liegt in "main.omni"
 bzw. "Beispielprogramm.omni"
 
 Probleme von Java (und ähnlichen Sprachen) sind auf 
-http://www.santis-training.ch/training/java/pitfalls.php
+http://www.santis-training.ch/java/pitfalls.php
 erklärt.
