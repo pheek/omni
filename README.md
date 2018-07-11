@@ -26,6 +26,3 @@ Beispiele
 ---------
 Beispiele liegen im Verzeichnis `Beispielprogramme`.
 
-Probleme von Java (und ähnlichen Sprachen) sind auf 
-http://www.santis-training.ch/java/pitfalls.php
-erklärt.
