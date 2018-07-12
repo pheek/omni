@@ -1,0 +1,31 @@
+if (a > b)
+  sum ← a - b
+elif (a = b)           // Ich mag else-if als eigenen Befehl, elif um Verwechslungen zwischen "else if" und "elseif" zu vermeiden
+  sum ← a
+else
+  sum ← b - a
+  
+  
+/*
+  switch/case ist in den meisten Programmiersprachen kein sauberes Konstrukt, da ein case mittels break beendet wird.
+  break ist der dumme Cousin von goto.
+  Als Alternative schlage ich Select/when/other von PL/I vor. Dieses Konstrukt verwendet saubere Blöcke.
+*/
+
+// Variante 1: Ausdruck im Select
+select (code)
+  when ('A')   // entspricht if (code = 'A')
+    ...
+  when ('B')
+    ...
+  other        // Der other-Block ist optional
+    ...
+  
+// Variante 2: Ausdruck im when
+select
+  when (sum > 20)     // Entspricht  if ( sum > 20 ) 
+    ...
+  when (count < 5 ||  // Entspricht (if ( count < 5 || sum < 1 )
+        sum < 1)
+    ...
+    
