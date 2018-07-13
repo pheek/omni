@@ -1,0 +1,29 @@
+//Datei: 03_sequeznen.omni
+//************************
+
+// Sequenzen werden ganz einfach von oben nach unten ausgeführt.
+// Pro Zeile stehte eine einzige Anweisung.
+// Sollte eine Anwesiung über mehrere Zeilen gehen, kann dies mit einem
+// Bakslasch vor Zeilenende (unmittelbar vor dem Newline) angegebe werden.
+// so
+Console.say("Hallo Welt ", \
+            "und andere Planeten")
+
+// Abkürzung für Console.say:
+print("Hallo Welt") 
+printnnl("Eingabe: ");
+// Wobei: Abkürzungen sind womöglich gar nicht gewünshct
+
+// Wichtig die Unterscheidung zwischen func und proc
+// In einer Sequenz stehen ausschließlich proc (neben Kontrollfluss und Deklarationen), NIEMALS
+// aber functions.
+
+x ← doIt()
+doIt()                ---> Fehlermeldung (ist ein Fct, keine Procedur)
+doIt2(4, "Gugus")
+print ("Summe bis 5: " & sumBis(5))
+// oder so?
+print ("Summe bis 5: ", sumBis(5))
+verdoppeln(x : sInt32) : sInt32      // Declare function returning double
+  ← 2 * x
+

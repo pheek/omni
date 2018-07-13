@@ -1,0 +1,15 @@
+// Omni In Out
+
+// Die Klasse `Console` ist etwas schwerfällig
+// Einfacher etwas wie IO
+Console.say("Hello")
+IO.say("Hello")
+
+import static //OMNI/IO.say
+say("Hello")
+
+// File IO könnte damit auch gleich gemacht werden
+f : File("woerter.txt")
+say(f, "Aale");
+say(f, "Berta");
+f.close() // implizites "flush()" beim "close()"

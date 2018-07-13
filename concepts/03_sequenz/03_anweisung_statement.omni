@@ -17,7 +17,9 @@ geschlecht : char // m/w
 // Beispiel
 jahrgang := 1968
 geschlecht ← 'v' + 1 // = 'w'
-
+// Oder so, ohne Zuweisung:
+jahrgang.set(1968)
+geschlecht.set('v'.inc())
 
 // Prozeduraufruf
 // ------
