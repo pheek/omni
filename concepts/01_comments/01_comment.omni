@@ -1,7 +1,8 @@
 //Datei: Xyz.src
 //**************
 
-/* Kommentare können auch Verschachtelt sein /* so wie dieser. */ */
+/* Kommentare starten mit SLASH-STERN und enden mit STERN-SLASH
+/* Kommentare können auch verschachtelt sein /* so wie dieser. */ */
 // (erster Entwurf).
 
 // einzeilige Kommentare, wie in Java ...
