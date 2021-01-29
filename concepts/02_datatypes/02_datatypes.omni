@@ -6,10 +6,10 @@
 // char   == sInt32
 
 
-// Deklarationen wie in Pascal: Name Doppelpunkt Wert
+// Deklarationen wie in Pascal: Name Doppelpunkt Definitionsbereich (Datentyp)
 x: sInt32
 
-x := 2_000_000_000 // max 2 Milliarden und ein paar Zerquetschte
+x := 2_000_000_044 // max 2 Milliarden und ein paar Zerquetschte
 
 y: real64
 y := 33e-2 // Wissenschaftliche Notation
