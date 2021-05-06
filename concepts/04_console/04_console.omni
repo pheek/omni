@@ -2,13 +2,15 @@
 
 // Die Klasse `Console` ist etwas schwerfällig
 // Einfacher etwas wie IO
-Console.say("Hello")
-IO.say("Hello")
+Console.say("Hello") // besser nicht so
+IO.say("Hello")      // sondern so.
 
-import static //OMNI/IO.say
+
+#import static /OMNI/IO.say
 say("Hello")
 
 // File IO könnte damit auch gleich gemacht werden
+#import /OMNI/File
 f : File("woerter.txt")
 say(f, "Aale");
 say(f, "Berta");
