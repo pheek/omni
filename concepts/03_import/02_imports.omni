@@ -5,19 +5,22 @@
 
 // Imports werden mit '/' angegeben, damit es
 // klar ist, dass es sich um Verzeichnisse handelt:
-#package //ly/gress/omni/test
+#package /ly/gress/omni/test;
 
-#import  //util/inc/*
-#import  //util/date
+#import  /util/inc/*;
+#import  /util/date;
+
+#import /util/calendar/**;  // importiert alles unter
 
 // Es kann auch von bestehenden Java-Klassen importiert werden
 // Dies gibt eine extrem hohe Möglichkeit an bestehendem Code zu verwenden.
-#external import java/util/ArrayList
+#external import /java/util/ArrayList
 
-allePersonen: ArrayList
+allePersonen: ArrayList;
+allePersonen := new ArrayList();
 
-p: Person
+p: Person;
 p := new Person();
-p.name := "Hansli Meier"
+p.name := "Hansli Meier";
 
-allePersonen.add(p)
+allePersonen.add(p);
